@@ -46,9 +46,6 @@ SELECT * FROM NumberCTE
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-/*
-Use LearnItFirst database - Employees_ForCTE table
-*/
 -- A simple self-join works if we only need employee name and manager name but if we need the 
 -- hierarchy of employee and manager we need to build a  recursive CTE as shown in the following section
 
