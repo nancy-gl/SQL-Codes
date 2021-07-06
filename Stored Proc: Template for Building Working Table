@@ -1,0 +1,75 @@
+USE [DBName]
+GO
+/****** Object:  StoredProcedure [dbo].[__TMPL__BLD_WRK_TABLENAME]    Script Date: 7/6/2020 8:54:01 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Manya Gautam Bhandari>
+-- Create date: <20190702>
+-- Description:	<Stored Proc to create working table for Raw data table>
+-- =============================================
+CREATE PROC [dbo].[__TMPL__BLD_WRK_TABLENAME]
+
+AS
+BEGIN
+-- =============================================
+-- Drop table if it exists
+-- =============================================
+IF OBJECT_ID('WRK_TABLENAME') IS NOT NULL
+DROP TABLE [WRK_TABLENAME]
+
+-- =============================================
+-- Create WRKing table
+-- =============================================
+CREATE TABLE [WRK_TABLENAME]
+(
+	[Rownumber]			INT IDENTITY(1,1)
+	,[AAA]				VARCHAR(100)
+	,[DDD]				DATE
+	,[BBB]				VARCHAR(1000)
+	,[CCC]				VARCHAR(1)
+	,[EEE]				INT	
+	,[FFF]				FLOAT
+)
+
+-- =============================================
+-- Truncate table to remove duplicate data addition
+-- =============================================
+TRUNCATE TABLE [WRK_TABLENAME]
+
+-- =============================================
+-- Insert into WRK table
+-- =============================================
+INSERT INTO [WRK_TABLENAME]
+(
+	[AAA]				
+	,[DDD]				
+	,[BBB]				
+	,[CCC]				
+	,[EEE]			
+	,[FFF]				
+)
+SELECT 
+	[AAA]				
+	,[DDD]				
+	,[BBB]				
+	,[CCC]				
+	,[EEE]			
+	,[FFF]	
+FROM [dbo].[TABLENAME]
+-- (x rows affected)
+
+
+END
+
+/*
+	SELECT *
+	FROM [WRK_TABLENAME]
+
+	SELECT *
+	FROM [dbo].[TABLENAME]
+
+
+*/
