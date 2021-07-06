@@ -1,3 +1,8 @@
+-- ===========================================================================================================
+--	Stored procedure to check if a table exists, drop if exists , Create table, truncate if duplicate data exists,
+--	and insert into working table with correct data types for the columns.
+-- ===========================================================================================================
+
 USE [DBName]
 GO
 /****** Object:  StoredProcedure [dbo].[__TMPL__BLD_WRK_TABLENAME]    Script Date: 7/6/2020 8:54:01 AM ******/
